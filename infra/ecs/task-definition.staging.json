@@ -1,0 +1,51 @@
+{
+  "family": "rentrik-web-staging",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/rentrik-web-task-role",
+  "containerDefinitions": [
+    {
+      "name": "rentrik-web",
+      "image": "ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/rentrik-web:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "NODE_ENV", "value": "production" },
+        { "name": "NEXT_PUBLIC_ENVIRONMENT", "value": "staging" },
+        { "name": "NEXT_PUBLIC_APP_URL", "value": "https://staging.rentrik.in" }
+      ],
+      "secrets": [
+        {
+          "name": "RESEND_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-south-1:ACCOUNT_ID:secret:rentrik/web/staging:RESEND_API_KEY::"
+        }
+      ],
+      "healthCheck": {
+        "command": ["CMD-SHELL", "wget -qO- http://localhost:3000/api/health || exit 1"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 40
+      },
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/rentrik/web/staging",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "web",
+          "awslogs-create-group": "true"
+        }
+      },
+      "stopTimeout": 30
+    }
+  ]
+}

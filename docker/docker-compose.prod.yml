@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────
+# Production — EC2 with Docker Compose
+# Usage: docker compose -f docker/docker-compose.prod.yml up -d
+# Requires: ECR_REGISTRY, ECR_REPOSITORY, IMAGE_TAG, RESEND_API_KEY
+# ─────────────────────────────────────────────────────────────
+
+version: "3.9"
+
+services:
+  web:
+    image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+      - RESEND_API_KEY=${RESEND_API_KEY}
+    restart: always
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 512M
+    networks:
+      - rentrik-network
+
+  nginx:
+    image: nginx:1.25-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../nginx/nginx.prod.conf:/etc/nginx/nginx.conf:ro
+      - nginx-cache:/var/cache/nginx
+    depends_on:
+      web:
+        condition: service_healthy
+    restart: always
+    networks:
+      - rentrik-network
+
+volumes:
+  nginx-cache:
+
+networks:
+  rentrik-network:
+    driver: bridge
