@@ -150,25 +150,31 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             set -e
-            cd /home/ec2-user/rentrik-website
 
-            # Pull latest compose config
-            git pull origin main
+            APP_PATH="${{ secrets.EC2_APP_PATH }}"
+            if [ -z "$APP_PATH" ]; then
+              APP_PATH="/home/ec2-user/rentrik-website"
+            fi
 
-            # Login to ECR
-            aws ecr get-login-password --region ${{ env.AWS_REGION }} | \
-              docker login --username AWS --password-stdin \
-              ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com
+            cd $APP_PATH
 
-            # Pull and run
-            export ECR_REGISTRY=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com
-            export ECR_REPOSITORY=${{ secrets.ECR_REPOSITORY }}
-            export IMAGE_TAG=${{ needs.build.outputs.image-tag }}
-            export RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
+            echo "Logging into AWS ECR..."
+
+            aws ecr get-login-password --region ap-south-1 | \
+            docker login --username AWS --password-stdin \
+            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com
+
+            echo "Pulling latest container..."
+
+            export ECR_REGISTRY="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.ap-south-1.amazonaws.com"
+            export ECR_REPOSITORY="${{ secrets.ECR_REPOSITORY }}"
+            export IMAGE_TAG="${{ needs.build.outputs.image-tag }}"
+            export RESEND_API_KEY="${{ secrets.RESEND_API_KEY }}"
 
             docker compose -f docker/docker-compose.prod.yml pull
             docker compose -f docker/docker-compose.prod.yml up -d
 
+            echo "✅ Deployment complete."
       - name: Notify on success
         if: success()
         run: echo "✅ Deploy successful — ${{ needs.build.outputs.image-tag }}"
