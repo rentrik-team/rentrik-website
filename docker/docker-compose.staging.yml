@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────────────────────
-# Staging environment
-# Usage: docker compose -f docker/docker-compose.staging.yml up -d
-# Mirrors production but uses staging env vars
+# Staging environment (EC2, no ALB)
+# Usage: docker compose --project-directory . -f docker/docker-compose.staging.yml up -d
+# Requires: nginx/ssl/ with certs + .htpasswd
 # ─────────────────────────────────────────────────────────────
 
 version: "3.9"
@@ -42,8 +42,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ../nginx/nginx.staging.conf:/etc/nginx/nginx.conf:ro
-      - ../nginx/ssl:/etc/nginx/ssl:ro # SSL certs (Let's Encrypt or ACM)
+      - ./nginx/nginx.staging.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro # SSL certs (Let's Encrypt or ACM)
       - nginx-cache:/var/cache/nginx
     depends_on:
       web:

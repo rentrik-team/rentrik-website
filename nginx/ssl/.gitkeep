@@ -1,0 +1,4 @@
+# Add SSL certs and auth for staging:
+# - staging.rentrik.in.crt
+# - staging.rentrik.in.key
+# - .htpasswd (htpasswd -c .htpasswd username)

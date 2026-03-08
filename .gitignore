@@ -24,6 +24,11 @@
 .DS_Store
 *.pem
 
+# nginx SSL (keep nginx/ssl/ dir, ignore certs and secrets)
+nginx/ssl/*.crt
+nginx/ssl/*.key
+nginx/ssl/.htpasswd
+
 # debug
 npm-debug.log*
 yarn-debug.log*

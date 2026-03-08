@@ -1,6 +1,6 @@
 # ─────────────────────────────────────────────────────────────
-# Production — EC2 with Docker Compose
-# Usage: docker compose -f docker/docker-compose.prod.yml up -d
+# Production — EC2 with Docker Compose (no ALB)
+# Usage: docker compose --project-directory . -f docker/docker-compose.prod.yml up -d
 # Requires: ECR_REGISTRY, ECR_REPOSITORY, IMAGE_TAG, RESEND_API_KEY
 # ─────────────────────────────────────────────────────────────
 
@@ -35,7 +35,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ../nginx/nginx.prod.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/nginx.prod.conf:/etc/nginx/nginx.conf:ro
       - nginx-cache:/var/cache/nginx
     depends_on:
       web:
