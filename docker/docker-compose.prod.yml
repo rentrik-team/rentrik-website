@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────
-# Production — EC2 with Docker Compose (no ALB)
+# Production - EC2 with Docker Compose (no ALB)
 # Usage: docker compose --project-directory . -f docker/docker-compose.prod.yml up -d
 # Requires: ECR_REGISTRY, ECR_REPOSITORY, IMAGE_TAG, RESEND_API_KEY
 # ─────────────────────────────────────────────────────────────

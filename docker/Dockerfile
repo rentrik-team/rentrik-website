@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────
-# Rentrik Web — Multi-Stage Dockerfile
+# Rentrik Web - Multi-Stage Dockerfile
 # Stage 1: deps     → install all dependencies
 # Stage 2: builder  → build the Next.js app
 # Stage 3: runner   → minimal production image
@@ -13,7 +13,7 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-# Copy package files first (Docker layer cache — only reinstalls
+# Copy package files first (Docker layer cache - only reinstalls
 # if package.json or lock file changes)
 COPY package.json package-lock.json ./
 

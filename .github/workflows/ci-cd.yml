@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────
-# Rentrik Web — CI/CD Pipeline (EC2)
+# Rentrik Web - CI/CD Pipeline (EC2)
 #
 # Triggers:
 #   push to main    → build image, push to ECR, deploy to EC2
@@ -30,7 +30,7 @@ env:
 
 jobs:
   # ──────────────────────────────────────────────────────────
-  # JOB 1 — Quality checks (runs on every push and PR)
+  # JOB 1 - Quality checks (runs on every push and PR)
   # ──────────────────────────────────────────────────────────
   quality:
     name: Lint, Type Check & Test
@@ -62,7 +62,7 @@ jobs:
         run: npm run test
 
   # ──────────────────────────────────────────────────────────
-  # JOB 2 — Build & push Docker image to ECR
+  # JOB 2 - Build & push Docker image to ECR
   # ──────────────────────────────────────────────────────────
   build:
     name: Build & Push to ECR
@@ -133,7 +133,7 @@ jobs:
           cache-to: type=gha,mode=max
 
   # ──────────────────────────────────────────────────────────
-  # JOB 3 — Deploy to EC2 (main branch only)
+  # JOB 3 - Deploy to EC2 (main branch only)
   # ──────────────────────────────────────────────────────────
   deploy:
     name: Deploy → EC2
@@ -177,4 +177,4 @@ jobs:
             echo "✅ Deployment complete."
       - name: Notify on success
         if: success()
-        run: echo "✅ Deploy successful — ${{ needs.build.outputs.image-tag }}"
+        run: echo "✅ Deploy successful - ${{ needs.build.outputs.image-tag }}"

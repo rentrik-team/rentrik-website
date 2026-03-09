@@ -2,8 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  // Add image domains when using external images (CDN, CMS):
-  // images: { remotePatterns: [{ protocol: "https", hostname: "cdn.rentrik.in", pathname: "/**" }] },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      },
+    ],
+  },
   async headers() {
     return [
       {
