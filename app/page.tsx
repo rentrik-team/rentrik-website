@@ -30,8 +30,8 @@ const Hero: React.FC = () => (
           RENT <span className="text-gradient">SMARTER</span>.
         </h1>
         <p className="text-muted mb-8 max-w-md text-sm leading-relaxed">
-          The world&apos;s first AI-driven peer-to-peer vehicle network. Rent verified rides or
-          turn your idle car into a high-yield asset.
+          The world&apos;s first AI-driven peer-to-peer vehicle network. Rent verified
+          rides or turn your idle car into a high-yield asset.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <a href="#waitlist" className="btn-primary group px-8 py-3 text-sm">
@@ -88,7 +88,7 @@ const BentoFeatures: React.FC = () => (
     <div className="mx-auto max-w-6xl">
       <div className="mb-8">
         <span className="section-label">Features</span>
-        <h2 className="text-2xl font-black tracking-tighter uppercase md:text-3xl tracking-widest">
+        <h2 className="text-2xl font-black tracking-tighter tracking-widest uppercase md:text-3xl">
           Smart features
         </h2>
       </div>
@@ -122,18 +122,16 @@ const BentoFeatures: React.FC = () => (
             <div className="bg-accent-green/20 mb-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl">
               <ShieldCheck className="text-accent-green h-5 w-5" />
             </div>
-            <h3 className="mb-2 text-base font-bold tracking-tight">
-              KYC trust system
-            </h3>
+            <h3 className="mb-2 text-base font-bold tracking-tight">KYC trust system</h3>
             <p className="text-muted mb-4 flex-1 text-xs leading-relaxed">
               Every lender and owner undergoes identity verification. Rent with peace of
               mind.
             </p>
             <div className="flex flex-wrap gap-2">
-              <span className="rounded-md border border-accent-green/30 bg-accent-green/10 px-2.5 py-1 text-[9px] font-semibold text-accent-green">
+              <span className="border-accent-green/30 bg-accent-green/10 text-accent-green rounded-md border px-2.5 py-1 text-[9px] font-semibold">
                 Verified
               </span>
-              <span className="rounded-md border border-accent-green/20 bg-accent-green/5 px-2.5 py-1 text-[9px] font-medium text-accent-green/90">
+              <span className="border-accent-green/20 bg-accent-green/5 text-accent-green/90 rounded-md border px-2.5 py-1 text-[9px] font-medium">
                 ID verified
               </span>
             </div>
@@ -183,10 +181,10 @@ const BentoFeatures: React.FC = () => (
 
         <div className="bento-item border-brand/20 from-brand/10 col-span-4 self-start bg-gradient-to-br to-transparent px-5 py-3 md:col-span-4">
           <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-            <p className="text-base font-bold italic leading-snug text-white md:text-lg">
+            <p className="text-base leading-snug font-bold text-white italic md:text-lg">
               &ldquo;The Airbnb for your garage.&rdquo;
             </p>
-            <p className="text-muted shrink-0 text-[9px] font-medium uppercase tracking-wider">
+            <p className="text-muted shrink-0 text-[9px] font-medium tracking-wider uppercase">
               - TechCrunch (Coming Soon)
             </p>
           </div>
@@ -201,7 +199,7 @@ const KeyDifferences: React.FC = () => (
     <div className="mx-auto max-w-6xl">
       <div className="mb-16 text-center">
         <span className="section-label mx-auto">Comparison</span>
-        <h2 className="mb-4 text-4xl font-black tracking-tighter uppercase md:text-5xl tracking-widest">
+        <h2 className="mb-4 text-4xl font-black tracking-tighter tracking-widest uppercase md:text-5xl">
           <span className="text-gradient">RENTRIK</span> EDGE
         </h2>
         <p className="text-muted text-sm font-medium tracking-widest uppercase">

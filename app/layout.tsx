@@ -18,7 +18,15 @@ export const metadata: Metadata = {
   },
   description:
     "Rentrik helps you find and manage rentals effortlessly. AI-powered mobility and peer-to-peer vehicle network.",
-  keywords: ["rental", "rent", "property", "housing", "Rentrik", "AI mobility", "P2P rental"],
+  keywords: [
+    "rental",
+    "rent",
+    "property",
+    "housing",
+    "Rentrik",
+    "AI mobility",
+    "P2P rental",
+  ],
   authors: [{ name: "Rentrik", url: "https://rentrik.in" }],
   openGraph: {
     type: "website",
@@ -39,11 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={plusJakartaSans.variable}>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="flex min-h-screen flex-col antialiased">
         <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>
