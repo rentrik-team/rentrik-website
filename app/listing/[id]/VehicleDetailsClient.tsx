@@ -150,20 +150,20 @@ export function VehicleDetailsClient({ vehicle }: { vehicle: Vehicle }) {
                 <span className="font-bold text-white">{vehicle.owner}</span>
               </div>
               <div className="flex items-center gap-2">
-                <a
+                <Link
                   href="/#waitlist"
                   className="text-muted hover:text-white flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-colors hover:border-white/20"
                   aria-label="Message host"
                 >
                   <MessageSquare size={18} />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/#waitlist"
                   className="text-muted hover:text-white flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-colors hover:border-white/20"
                   aria-label="Call host"
                 >
                   <Phone size={18} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

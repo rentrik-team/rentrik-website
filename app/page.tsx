@@ -5,7 +5,6 @@ import {
   ArrowRight,
   Bot,
   ShieldCheck,
-  TrendingUp,
   MessageSquare,
   Phone,
   Clock,
@@ -31,7 +30,7 @@ const Hero: React.FC = () => (
           RENT <span className="text-gradient">SMARTER</span>.
         </h1>
         <p className="text-muted mb-8 max-w-md text-sm leading-relaxed">
-          The world's first AI-driven peer-to-peer vehicle network. Rent verified rides or
+          The world&apos;s first AI-driven peer-to-peer vehicle network. Rent verified rides or
           turn your idle car into a high-yield asset.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">

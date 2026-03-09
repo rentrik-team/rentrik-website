@@ -68,7 +68,7 @@ export default function SafetyPage() {
                             </h1>
 
                             <p className="text-muted text-base md:text-lg max-w-lg leading-relaxed">
-                                Engineered with a multi-layered trust architecture for the world's safest peer-to-peer mobility network.
+                                Engineered with a multi-layered trust architecture for the world&apos;s safest peer-to-peer mobility network.
                             </p>
 
                             <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8">
@@ -179,7 +179,7 @@ export default function SafetyPage() {
                                 <span className="section-label">Reputation System</span>
                                 <h2 className="text-4xl font-black tracking-tighter mb-6 uppercase">THE RENTRIK TRUST SCORE</h2>
                                 <p className="text-muted text-sm leading-relaxed mb-8">
-                                    Every member of our community has a dynamic Trust Score. This isn't just a rating; it's a comprehensive analysis of behavior, reliability, and community contribution.
+                                    Every member of our community has a dynamic Trust Score. This isn&apos;t just a rating; it&apos;s a comprehensive analysis of behavior, reliability, and community contribution.
                                 </p>
 
                                 <div className="space-y-6">
@@ -247,16 +247,16 @@ export default function SafetyPage() {
                             </div>
                             <h3 className="text-xl font-black mb-3 uppercase tracking-tighter">Insurance Coverage</h3>
                             <p className="text-muted text-xs leading-relaxed mb-4">
-                                Every Rentrik journey is protected by our comprehensive $1M liability policy. We've partnered with industry leaders to ensure you're covered from pickup to drop-off.
+                                Every Rentrik journey is protected by our comprehensive $1M liability policy. We&apos;ve partnered with industry leaders to ensure you&apos;re covered from pickup to drop-off.
                             </p>
                         </div>
                         <div className="p-4 rounded-lg bg-white/[0.02] border border-white/5">
                             <div className="flex justify-between items-center mb-2">
                                 <span className="text-[9px] font-black uppercase tracking-widest text-muted">Partner</span>
-                                <span className="text-[9px] font-black uppercase tracking-widest text-white">LLOYD'S OF LONDON</span>
+                                <span className="text-[9px] font-black uppercase tracking-widest text-white">LLOYD&apos;S OF LONDON</span>
                             </div>
                             <p className="text-[9px] text-muted leading-relaxed italic">
-                                "Providing institutional-grade protection for the decentralized mobility era."
+                                &ldquo;Providing institutional-grade protection for the decentralized mobility era.&rdquo;
                             </p>
                         </div>
                     </div>

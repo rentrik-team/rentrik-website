@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
                                 EFFECT.
                             </h1>
                             <p className="text-muted text-base md:text-lg max-w-lg leading-relaxed">
-                                Rentrik isn't just a rental platform. It's a decentralized mobility network powered by AI and community trust.
+                                Rentrik isn&apos;t just a rental platform. It&apos;s a decentralized mobility network powered by AI and community trust.
                             </p>
                         </motion.div>
 
@@ -271,7 +271,7 @@ export default function HowItWorksPage() {
                         </div>
                     </div>
                     <p className="mt-12 text-xs text-muted leading-relaxed max-w-md mx-auto italic">
-                        "We believe in a fair network. Owners keep 85% of every rental, and lenders pay exactly what they see. No hidden cleaning fees or service surcharges."
+                        &ldquo;We believe in a fair network. Owners keep 85% of every rental, and lenders pay exactly what they see. No hidden cleaning fees or service surcharges.&rdquo;
                     </p>
                 </div>
             </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Instagram, Twitter, Facebook, Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 

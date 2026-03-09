@@ -47,7 +47,7 @@ export const WaitlistSection: React.FC = () => {
                             <div className="w-12 h-12 bg-accent-green/20 rounded-full flex items-center justify-center">
                                 <CheckCircle2 className="text-accent-green w-6 h-6" />
                             </div>
-                            <p className="text-lg font-bold">You're on the list!</p>
+                            <p className="text-lg font-bold">You&apos;re on the list!</p>
                         </motion.div>
                     ) : (
                         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

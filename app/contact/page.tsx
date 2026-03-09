@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Sparkles } from 'lucide-react';
+import { Mail, MapPin, Send, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ContactPage() {
@@ -77,7 +77,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-black uppercase mb-2">Message Sent</h3>
-                                <p className="text-sm text-muted">We'll get back to you within 24 hours.</p>
+                                <p className="text-sm text-muted">We&apos;ll get back to you within 24 hours.</p>
                             </div>
                             <button onClick={() => setSent(false)} className="btn-secondary px-8 py-2 text-xs uppercase font-black">Send another</button>
                         </motion.div>
