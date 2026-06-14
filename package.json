@@ -12,6 +12,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.9",
     "antd": "^6.3.1",
     "framer-motion": "^12.35.2",
     "lucide-react": "^0.577.0",
